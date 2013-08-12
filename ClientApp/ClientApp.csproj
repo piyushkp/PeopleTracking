@@ -1,0 +1,529 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1C0A164F-46E1-4CFA-A82A-8CF9C79FDE89}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ClientApp</RootNamespace>
+    <AssemblyName>ClientApp</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Emgu.CV, Version=2.4.9.1847, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Data\DLL\Emgu.CV.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.GPU, Version=2.4.9.1847, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Data\DLL\Emgu.CV.GPU.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.ML">
+      <HintPath>Data\DLL\Emgu.CV.ML.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.OCR">
+      <HintPath>Data\DLL\Emgu.CV.OCR.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.Stitching">
+      <HintPath>Data\DLL\Emgu.CV.Stitching.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.UI, Version=2.4.9.1847, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Data\DLL\Emgu.CV.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.VideoStab">
+      <HintPath>Data\DLL\Emgu.CV.VideoStab.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.Util, Version=2.4.9.1847, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Data\DLL\Emgu.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClientApp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientApp.Designer.cs">
+      <DependentUpon>ClientApp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WindowsImpression.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsImpression.Designer.cs">
+      <DependentUpon>WindowsImpression.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ClientApp.resx">
+      <DependentUpon>ClientApp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="WindowsImpression.resx">
+      <DependentUpon>WindowsImpression.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Data\Gender_Database\training_data.csv" />
+    <None Include="Data\Gender_Database\train_x70png.yml" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PeopleTracking\PeopleTracking.csproj">
+      <Project>{1B69D865-3542-4112-8446-7DE23DEDFA0E}</Project>
+      <Name>PeopleTracking</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\DLL\Emgu.CV.dll" />
+    <Content Include="Data\DLL\Emgu.CV.GPU.dll" />
+    <Content Include="Data\DLL\Emgu.CV.ML.dll" />
+    <Content Include="Data\DLL\Emgu.CV.OCR.dll" />
+    <Content Include="Data\DLL\Emgu.CV.Stitching.dll" />
+    <Content Include="Data\DLL\Emgu.CV.UI.dll" />
+    <Content Include="Data\DLL\Emgu.CV.VideoStab.dll" />
+    <Content Include="Data\DLL\Emgu.Util.dll" />
+    <Content Include="Data\Gender_Database\face_database\female\1.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\10.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\100.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\101.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\102.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\103.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\104.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\105.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\106.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\107.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\108.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\109.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\11.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\110.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\111.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\112.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\113.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\114.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\115.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\116.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\117.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\118.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\119.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\12.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\120.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\121.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\122.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\123.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\124.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\125.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\126.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\127.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\128.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\129.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\13.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\130.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\131.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\132.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\133.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\134.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\135.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\136.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\137.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\138.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\139.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\14.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\140.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\141.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\142.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\143.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\144.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\145.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\146.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\147.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\148.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\149.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\15.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\150.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\151.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\152.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\153.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\154.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\155.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\156.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\157.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\158.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\159.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\16.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\160.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\161.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\162.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\163.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\164.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\165.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\166.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\167.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\168.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\169.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\17.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\170.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\171.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\172.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\173.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\174.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\175.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\18.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\19.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\2.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\20.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\21.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\22.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\23.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\24.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\25.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\26.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\27.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\28.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\29.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\3.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\30.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\31.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\32.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\33.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\34.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\35.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\36.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\37.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\38.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\39.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\4.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\40.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\41.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\42.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\43.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\44.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\45.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\46.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\47.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\48.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\49.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\5.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\50.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\51.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\52.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\53.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\54.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\55.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\56.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\57.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\58.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\59.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\6.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\60.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\61.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\62.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\63.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\64.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\65.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\66.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\67.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\68.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\69.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\7.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\70.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\71.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\72.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\73.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\74.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\75.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\76.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\77.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\78.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\79.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\8.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\80.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\81.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\82.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\83.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\84.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\85.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\86.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\87.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\88.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\89.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\9.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\90.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\91.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\92.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\93.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\94.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\95.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\96.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\97.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\98.jpg" />
+    <Content Include="Data\Gender_Database\face_database\female\99.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\1.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\10.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\100.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\101.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\102.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\103.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\104.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\105.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\106.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\107.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\108.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\109.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\11.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\110.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\111.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\112.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\113.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\114.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\115.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\116.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\117.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\118.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\119.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\12.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\120.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\121.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\122.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\123.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\124.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\125.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\126.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\127.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\128.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\129.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\13.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\130.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\131.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\132.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\133.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\134.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\135.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\136.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\137.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\138.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\139.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\14.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\140.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\141.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\142.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\143.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\144.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\145.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\146.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\147.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\148.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\149.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\15.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\150.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\151.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\152.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\153.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\154.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\155.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\156.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\157.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\158.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\159.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\16.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\160.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\161.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\162.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\163.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\164.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\165.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\166.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\167.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\168.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\169.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\17.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\170.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\171.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\172.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\173.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\174.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\175.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\176.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\177.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\178.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\179.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\18.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\180.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\181.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\182.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\183.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\184.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\185.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\186.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\187.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\188.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\189.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\19.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\190.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\191.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\192.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\193.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\194.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\195.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\196.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\197.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\198.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\199.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\2.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\20.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\200.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\201.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\202.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\203.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\204.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\205.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\206.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\207.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\21.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\22.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\23.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\24.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\25.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\26.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\27.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\28.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\29.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\3.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\30.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\31.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\32.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\33.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\34.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\35.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\36.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\37.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\38.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\39.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\4.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\40.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\41.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\42.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\43.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\44.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\45.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\46.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\47.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\48.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\49.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\5.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\50.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\51.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\52.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\53.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\54.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\55.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\56.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\57.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\58.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\59.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\6.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\60.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\61.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\62.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\63.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\64.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\65.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\66.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\67.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\68.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\69.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\7.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\70.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\71.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\72.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\73.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\74.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\75.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\76.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\77.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\78.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\79.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\8.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\80.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\81.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\82.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\83.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\84.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\85.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\86.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\87.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\88.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\89.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\9.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\90.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\91.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\92.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\93.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\94.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\95.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\96.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\97.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\98.jpg" />
+    <Content Include="Data\Gender_Database\face_database\male\99.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
