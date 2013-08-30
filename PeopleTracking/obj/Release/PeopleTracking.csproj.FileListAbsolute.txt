@@ -23,7 +23,6 @@ D:\Projects\Image Processing\Human tracking\People Tracking\PeopleTracking\bin\R
 D:\Projects\Image Processing\Human tracking\People Tracking\PeopleTracking\bin\Release\Emgu.CV.GPU.dll
 D:\Projects\Image Processing\Human tracking\People Tracking\PeopleTracking\bin\Release\Emgu.CV.UI.dll
 D:\Projects\Image Processing\Human tracking\People Tracking\PeopleTracking\bin\Release\Emgu.Util.dll
-D:\Projects\Image Processing\Human tracking\People Tracking\PeopleTracking\obj\Release\ResolveAssemblyReference.cache
 D:\Projects\Image Processing\Human tracking\People Tracking\PeopleTracking\obj\Release\PeopleTracking.dll
 D:\Projects\Image Processing\Human tracking\People Tracking\PeopleTracking\obj\Release\PeopleTracking.pdb
 D:\Projects\Image Processing\Human tracking\People Tracking\bin\haarcascade_frontalface_default.xml

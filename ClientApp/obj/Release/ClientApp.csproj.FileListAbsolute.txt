@@ -29,11 +29,8 @@ D:\Projects\Image Processing\Human tracking\People Tracking\ClientApp\bin\Releas
 D:\Projects\Image Processing\Human tracking\People Tracking\ClientApp\bin\Release\Emgu.Util.dll
 D:\Projects\Image Processing\Human tracking\People Tracking\ClientApp\bin\Release\PeopleTracking.dll
 D:\Projects\Image Processing\Human tracking\People Tracking\ClientApp\bin\Release\PeopleTracking.pdb
-D:\Projects\Image Processing\Human tracking\People Tracking\ClientApp\obj\Release\ResolveAssemblyReference.cache
 D:\Projects\Image Processing\Human tracking\People Tracking\ClientApp\obj\Release\ClientApp.ClientApp.resources
 D:\Projects\Image Processing\Human tracking\People Tracking\ClientApp\obj\Release\ClientApp.Properties.Resources.resources
-D:\Projects\Image Processing\Human tracking\People Tracking\ClientApp\obj\Release\GenerateResource.read.1.tlog
-D:\Projects\Image Processing\Human tracking\People Tracking\ClientApp\obj\Release\GenerateResource.write.1.tlog
 D:\Projects\Image Processing\Human tracking\People Tracking\ClientApp\obj\Release\ClientApp.exe
 D:\Projects\Image Processing\Human tracking\People Tracking\ClientApp\obj\Release\ClientApp.pdb
 D:\Projects\Image Processing\Human tracking\People Tracking\bin\haarcascade_frontalface_default.xml
@@ -59,3 +56,5 @@ D:\Projects\Image Processing\Human tracking\People Tracking\bin\ClientApp.exe
 D:\Projects\Image Processing\Human tracking\People Tracking\bin\ClientApp.pdb
 D:\Projects\Image Processing\Human tracking\People Tracking\bin\ClientApp.exe.config
 D:\Projects\Image Processing\Human tracking\People Tracking\ClientApp\obj\Release\ClientApp.WindowsImpression.resources
+D:\Projects\Image Processing\Human tracking\People Tracking\ClientApp\obj\Release\ClientApp.csprojResolveAssemblyReference.cache
+D:\Projects\Image Processing\Human tracking\People Tracking\ClientApp\obj\Release\ClientApp.csproj.GenerateResource.Cache
